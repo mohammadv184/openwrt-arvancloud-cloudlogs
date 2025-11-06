@@ -131,7 +131,7 @@ jobs:
           echo "SDK setup complete"
           
           
-          echo "src-link arvancloud-cloudlogs $GITHUB_WORKSPACE/packages" >> sdk/feeds.conf
+          echo "src-link packages $GITHUB_WORKSPACE/packages" >> sdk/feeds.conf
           cat sdk/feeds.conf
 
       - name: Update feeds
