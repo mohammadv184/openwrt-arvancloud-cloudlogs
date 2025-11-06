@@ -111,7 +111,7 @@ jobs:
       - name: Setup OpenWrt SDK
         run: |
           mkdir -p packages/arvancloud-cloudlogs
-          cp -r ./* packages/arvancloud-cloudlogs/
+          cp -r !(packages) packages/arvancloud-cloudlogs/
           
           wget ${{ matrix.url_sdk }} -O sdk.tar.xz || {
             echo "Failed to download SDK for ${{ matrix.platform }}"
@@ -244,4 +244,12 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  sync-with-repository:
+    needs: build
+    runs-on: ubuntu-latest
+    if: needs.build.result == 'success'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
