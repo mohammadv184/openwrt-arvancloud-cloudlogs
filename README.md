@@ -10,7 +10,6 @@
 
 </p>
 
----
 
 `arvancloud-cloudlogs` is a lightweight, high-performance daemon for OpenWrt devices. It seamlessly subscribes to the system log (logd) via ubus and forwards log entries in efficient batches to the ArvanCloud CloudLogs service.
 
@@ -19,7 +18,6 @@ This daemon is designed to be resource-efficient, making it ideal for low-resour
 
 ## Build
 
----
 To build this package, you can use the OpenWrt SDK or include it as a package feed in your OpenWrt buildroot.
 
 1. Place the `arvancloud-cloudlogs` package directory under `<buildroot>/package/`.
@@ -35,8 +33,6 @@ To build this package, you can use the OpenWrt SDK or include it as a package fe
 
 ## Installation
 
----
-
 ### Manual Download
 You can download the latest release from the [Releases](https://github.com/mohammadv184/openwrt-arvancloud-cloudlogs/releases) page,
 then move the `.ipk` file to your OpenWrt device and install it using `opkg`:
@@ -50,8 +46,6 @@ then select the `.ipk` file you downloaded.
 
 
 ## Configuration
-
----
 
 Configuration is managed via the UCI file: `/etc/config/arvancloud-cloudlogs`.
 
@@ -88,8 +82,6 @@ service arvancloud-cloudlogs restart
 
 ## Service Management
 
----
-
 The service is managed by `procd` and can be controlled via the standard `init.d` script or via `service` command.
 
 * **Start & Enable**:
@@ -114,26 +106,18 @@ The service is managed by `procd` and can be controlled via the standard `init.d
 
 ## Contributing
 
----
-
 Contributions are welcome! Please open issues or pull requests for improvements or bug fixes.
 
 ## Security
 
----
-
-If you discover any security-related issues, please email mohammadv184@gmail.com instead of using the issue tracker.
+If you discover any security-related issues, please email mohammad.v184@gmail.com instead of using the issue tracker.
 
 ## Credits
-
----
 
 - [Mohammad Abbasi](https://mohammad-abbasi.me)
 - [All Contributors](../../contributors)
 
 
 ## License
-
----
 
 The Apache 2.0 License (Apache-2.0). Please see [License File](LICENSE) for more information.
