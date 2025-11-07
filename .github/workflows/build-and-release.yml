@@ -130,11 +130,15 @@ jobs:
           echo "SDK_PATH=$(pwd)/sdk" >> $GITHUB_ENV
           echo "SDK setup complete"
           
+          cat > sdk/feeds.conf << EOF
+          src-git base https://github.com/openwrt/openwrt.git;openwrt-${{ matrix.sdk_ver }}
+          src-git packages https://github.com/openwrt/packages.git;openwrt-${{ matrix.sdk_ver }}
+          src-git routing https://github.com/openwrt/routing.git;openwrt-${{ matrix.sdk_ver }}
+          src-git telephony https://github.com/openwrt/telephony.git;openwrt-${{ matrix.sdk_ver }}
+          src-link cloudlogs $GITHUB_WORKSPACE/packages
+          EOF
           
-          echo "src-link packages $GITHUB_WORKSPACE/packages" >> sdk/feeds.conf
           cat sdk/feeds.conf
-          
-          make defconfig -C sdk
       - name: Update feeds
         run: |
           cd sdk
@@ -148,6 +152,7 @@ jobs:
       - name: Build package
         run: |
           cd sdk
+          make defconfig
           make package/arvancloud-cloudlogs/compile V=s
       - name: Find and verify package
         id: find_pkg
