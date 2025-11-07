@@ -111,7 +111,7 @@ jobs:
       - name: Setup OpenWrt SDK
         run: |
           mkdir -p packages/arvancloud-cloudlogs
-          rsync -av --exclude 'packages' ./ packages/
+          rsync -av --exclude 'packages' ./ packages/arvancloud-cloudlogs
           
           wget ${{ matrix.url_sdk }} -O sdk.tar.xz || {
             echo "Failed to download SDK for ${{ matrix.platform }}"
@@ -133,7 +133,8 @@ jobs:
           
           echo "src-link packages $GITHUB_WORKSPACE/packages" >> sdk/feeds.conf
           cat sdk/feeds.conf
-
+          
+          make defconfig
       - name: Update feeds
         run: |
           cd sdk
