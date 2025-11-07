@@ -134,7 +134,7 @@ jobs:
           echo "src-link packages $GITHUB_WORKSPACE/packages" >> sdk/feeds.conf
           cat sdk/feeds.conf
           
-          make defconfig
+          make defconfig -C sdk
       - name: Update feeds
         run: |
           cd sdk
