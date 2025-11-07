@@ -180,7 +180,7 @@ jobs:
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.PKG_NAME }}-${{ matrix.sdk_ver }}-v${{ env.PKG_VERSION }}
+          name: ${{ env.PKG_NAME }}-${{ matrix.platform }}-${{ matrix.sdk_ver }}-v${{ env.PKG_VERSION }}
           path: ${{ env.SDK_PATH }}/${{ steps.find_pkg.outputs.package_file }}
           retention-days: 90
           if-no-files-found: error
