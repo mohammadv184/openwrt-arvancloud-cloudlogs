@@ -8,7 +8,6 @@ on:
 
 env:
   PKG_NAME: arvancloud-cloudlogs
-  OPENWRT_VERSION: 24.10.4
 
 jobs:
   build:
@@ -18,75 +17,75 @@ jobs:
       matrix:
         include:
           - platform: x86_64
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/x86/64/openwrt-sdk-24.10.0-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/x86/64/openwrt-sdk-24.10.4-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: aarch64_generic
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/rockchip/armv8/openwrt-sdk-24.10.0-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/rockchip/armv8/openwrt-sdk-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: aarch64_cortex-a53
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/mvebu/cortexa53/openwrt-sdk-24.10.0-mvebu-cortexa53_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/mvebu/cortexa53/openwrt-sdk-24.10.4-mvebu-cortexa53_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: aarch64_cortex-a72
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/mvebu/cortexa72/openwrt-sdk-24.10.0-mvebu-cortexa72_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/mvebu/cortexa72/openwrt-sdk-24.10.4-mvebu-cortexa72_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: arm_cortex-a5_vfpv4
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/at91/sama5/openwrt-sdk-24.10.0-at91-sama5_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/at91/sama5/openwrt-sdk-24.10.4-at91-sama5_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: arm_cortex-a7
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/mediatek/mt7629/openwrt-sdk-24.10.0-mediatek-mt7629_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/mediatek/mt7629/openwrt-sdk-24.10.4-mediatek-mt7629_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: arm_cortex-a7_neon-vfpv4
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/sunxi/cortexa7/openwrt-sdk-24.10.0-sunxi-cortexa7_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/sunxi/cortexa7/openwrt-sdk-24.10.4-sunxi-cortexa7_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: arm_cortex-a8_vfpv3
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/sunxi/cortexa8/openwrt-sdk-24.10.0-sunxi-cortexa8_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/sunxi/cortexa8/openwrt-sdk-24.10.4-sunxi-cortexa8_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: arm_cortex-a9
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/bcm53xx/generic/openwrt-sdk-24.10.0-bcm53xx-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/bcm53xx/generic/openwrt-sdk-24.10.4-bcm53xx-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: arm_cortex-a9_neon
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/zynq/generic/openwrt-sdk-24.10.0-zynq-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/zynq/generic/openwrt-sdk-24.10.4-zynq-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: arm_cortex-a9_vfpv3-d16
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/mvebu/cortexa9/openwrt-sdk-24.10.0-mvebu-cortexa9_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/mvebu/cortexa9/openwrt-sdk-24.10.4-mvebu-cortexa9_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: arm_cortex-a15_neon-vfpv4
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/ipq806x/generic/openwrt-sdk-24.10.0-ipq806x-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/ipq806x/generic/openwrt-sdk-24.10.4-ipq806x-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: mips_24kc
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/ath79/generic/openwrt-sdk-24.10.0-ath79-generic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/ath79/generic/openwrt-sdk-24.10.4-ath79-generic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: mips_4kec
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/realtek/rtl838x/openwrt-sdk-24.10.0-realtek-rtl838x_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/realtek/rtl838x/openwrt-sdk-24.10.4-realtek-rtl838x_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: mips_mips32
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/bcm53xx/generic/openwrt-sdk-24.10.0-bcm53xx-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/bcm53xx/generic/openwrt-sdk-24.10.4-bcm53xx-generic_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: mipsel_24kc
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/ramips/rt288x/openwrt-sdk-24.10.0-ramips-rt288x_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/ramips/rt288x/openwrt-sdk-24.10.4-ramips-rt288x_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: mipsel_74kc
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/ramips/rt3883/openwrt-sdk-24.10.0-ramips-rt3883_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/ramips/rt3883/openwrt-sdk-24.10.4-ramips-rt3883_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
           - platform: mipsel_mips32
-            url_sdk: https://downloads.openwrt.org/releases/24.10.0/targets/bcm47xx/generic/openwrt-sdk-24.10.0-bcm47xx-generic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+            url_sdk: https://downloads.openwrt.org/releases/24.10.4/targets/bcm47xx/generic/openwrt-sdk-24.10.4-bcm47xx-generic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
             sdk_ver: "24.10"
 
 
@@ -205,7 +204,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: release-packages
-          pattern: ${{ env.PKG_NAME }}-*-v*
+          pattern: ${{ env.PKG_NAME }}-*
 
       - name: Create checksums
         run: |
@@ -255,12 +254,46 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  sync-with-repository:
-    needs: build
+  sync-with-opkg-repo:
     runs-on: ubuntu-latest
-    if: needs.build.result == 'success'
-
     steps:
-      - name: Checkout code
+      - name: Checkout openwrt-arvancloud-cloudlogs
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all tags
 
+      - name: Get latest tag commit
+        id: tagged_commit
+        run: |
+          # Get the latest tag for this release
+          # Use GITHUB_REF for the release event (refs/tags/<tag>)
+          TAG_REF=${GITHUB_REF#refs/tags/}
+          # Get the commit hash for the tag
+          COMMIT_HASH=$(git rev-list -n 1 $TAG_REF)
+          echo "tag=$TAG_REF" >> $GITHUB_OUTPUT
+          echo "commit_hash=$COMMIT_HASH" >> $GITHUB_OUTPUT
+
+      - name: Checkout openwrt-packages repo
+        uses: actions/checkout@v4
+        with:
+          repository: mohammadv184/openwrt-packages
+          ref: main
+          path: openwrt-packages
+
+      - name: Update submodule to latest tagged commit
+        working-directory: openwrt-packages
+        run: |
+          git submodule update --init packages/openwrt-arvancloud-cloudlogs
+          cd packages/openwrt-arvancloud-cloudlogs
+          git fetch
+          git checkout ${{ steps.tagged_commit.outputs.commit_hash }}
+          cd ../..
+          git add packages/openwrt-arvancloud-cloudlogs
+      - name: Commit and push changes
+        working-directory: openwrt-packages
+        run: |
+          git config --global user.name "Mohammadv184 (GitHub Actions)"
+          git config --global user.email "mohammad,v184@gmail.com"
+          git add .
+          git commit -m "Sync openwrt-arvancloud-cloudlogs submodule to tag ${{ steps.tagged_commit.outputs.tag }} (${{ steps.tagged_commit.outputs.commit_hash }}) from release"
+          git push

@@ -33,6 +33,28 @@ To build this package, you can use the OpenWrt SDK or include it as a package fe
 
 ## Installation
 
+
+### Opkg Repository
+
+1. Add opkg packages key:
+```sh
+wget -O mohammadv184-public.key https://openwrt.mohammad-abbasi.me/public.key
+opkg-key add mohammadv184-public.key
+```
+
+2. Add the repository to your `/etc/opkg/customfeeds.conf`:
+```sh
+echo "src/gz mohammadv184_packages https://openwrt.mohammad-abbasi.me/packages/$(. /etc/openwrt_release ; echo $DISTRIB_ARCH)" >> /etc/opkg/customfeeds.conf
+```
+
+3. Update opkg and install the package:
+```sh
+opkg update
+opkg install arvancloud-cloudlogs
+```
+
+
+
 ### Manual Download
 You can download the latest release from the [Releases](https://github.com/mohammadv184/openwrt-arvancloud-cloudlogs/releases) page,
 then move the `.ipk` file to your OpenWrt device and install it using `opkg`:
