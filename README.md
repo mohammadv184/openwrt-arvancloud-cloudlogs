@@ -142,4 +142,4 @@ If you discover any security-related issues, please email mohammad.v184@gmail.co
 
 ## License
 
-The Apache 2.0 License (Apache-2.0). Please see [License File](LICENSE) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
