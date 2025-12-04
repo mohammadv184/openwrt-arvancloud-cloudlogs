@@ -64,16 +64,16 @@ static time_t curl_last_used = 0;        // Last time CURL handle was used
 
 // Logging helpers that write to syslog
 #define log_debug(...) do { \
-    fprintf(stderr, __VA_ARGS__); \
-    fprintf(stderr, "\n"); \
+    fprintf(stdout, __VA_ARGS__); \
+    fprintf(stdout, "\n"); \
 } while(0)
 #define log_info(...) do { \
-    fprintf(stderr, __VA_ARGS__); \
-    fprintf(stderr, "\n"); \
+    fprintf(stdout, __VA_ARGS__); \
+    fprintf(stdout, "\n"); \
 } while(0)
 #define log_warn(...) do { \
-    fprintf(stderr, __VA_ARGS__); \
-    fprintf(stderr, "\n"); \
+    fprintf(stdout, __VA_ARGS__); \
+    fprintf(stdout, "\n"); \
 } while(0)
 #define log_err(...) do { \
     fprintf(stderr, __VA_ARGS__); \
@@ -270,7 +270,7 @@ static int http_post_json(const char *url, const char *api_key, const char *json
 
     struct curl_slist *headers = NULL;
     headers = curl_slist_append(headers, "Content-Type: application/json");
-    headers = curl_slist_append(headers, "User-Agent: openwrt-arvancloud-cloudlogs/0.1.0");
+    headers = curl_slist_append(headers, "User-Agent: openwrt-arvancloud-cloudlogs/0.1.1");
     char keyhdr[256];
     if (api_key) {
         snprintf(keyhdr, sizeof(keyhdr), "Authorization: apikey %s", api_key);
@@ -530,7 +530,7 @@ static void process_log_message(struct blob_attr *msg)
     const char *message = tb[F_MSG] ? blobmsg_get_string(tb[F_MSG]) : "";
 
     // Filter out our own log messages to prevent a recursive loop
-    if (message && strcmp(message, LOG_TAG) == 0) {
+    if (message && strstr(message, LOG_TAG) != NULL) {
         return; // It's our own log, drop it.
     }
 

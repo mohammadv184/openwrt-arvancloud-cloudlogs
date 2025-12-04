@@ -3,7 +3,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=arvancloud-cloudlogs
-PKG_VERSION:=0.1.0
+PKG_VERSION:=0.1.1
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=Mohammad Abbasi <mohammad.v184@gmail.com>
@@ -53,6 +53,10 @@ define Package/arvancloud-cloudlogs/install
 	$(INSTALL_BIN) ./files/arvancloud-cloudlogs.init $(1)/etc/init.d/arvancloud-cloudlogs
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_CONF) ./files/arvancloud-cloudlogs.conf $(1)/etc/config/arvancloud-cloudlogs
+endef
+
+define Package/arvancloud-cloudlogs/conffiles
+/etc/config/arvancloud-cloudlogs
 endef
 
 $(eval $(call BuildPackage,arvancloud-cloudlogs))

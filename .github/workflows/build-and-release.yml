@@ -212,7 +212,7 @@ jobs:
           find . -name "*.ipk" -exec sh -c 'sha256sum "$1" > "$1.sha256sum"' _ {} \;
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           name: Release v${{ steps.version.outputs.version }}
           body: |
@@ -277,18 +277,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: mohammadv184/openwrt-packages
-          ref: main
+          ref: master
           path: openwrt-packages
+          token: '${{ secrets.TOKEN_PACKAGES }}'
 
       - name: Update submodule to latest tagged commit
         working-directory: openwrt-packages
         run: |
-          git submodule update --init packages/openwrt-arvancloud-cloudlogs
-          cd packages/openwrt-arvancloud-cloudlogs
+          git submodule update --init openwrt-arvancloud-cloudlogs
+          cd openwrt-arvancloud-cloudlogs
           git fetch
           git checkout ${{ steps.tagged_commit.outputs.commit_hash }}
-          cd ../..
-          git add packages/openwrt-arvancloud-cloudlogs
+          cd ..
+          git add openwrt-arvancloud-cloudlogs
       - name: Commit and push changes
         working-directory: openwrt-packages
         run: |
